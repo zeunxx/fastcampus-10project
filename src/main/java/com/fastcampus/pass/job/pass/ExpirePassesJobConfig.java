@@ -2,6 +2,7 @@ package com.fastcampus.pass.job.pass;
 
 import com.fastcampus.pass.repository.pass.PassEntity;
 import com.fastcampus.pass.repository.pass.PassStatus;
+import lombok.RequiredArgsConstructor;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
@@ -21,7 +22,7 @@ import java.util.Map;
 import static java.time.LocalDateTime.now;
 
 @Configuration
-//@RequiredArgsConstructor
+@RequiredArgsConstructor
 public class ExpirePassesJobConfig {
     private final int CHUNK_SIZE = 5;
 
@@ -30,11 +31,6 @@ public class ExpirePassesJobConfig {
     private final StepBuilderFactory stepBuilderFactory;
     private final EntityManagerFactory entityManagerFactory;
 
-    public ExpirePassesJobConfig(JobBuilderFactory jobBuilderFactory, StepBuilderFactory stepBuilderFactory, EntityManagerFactory entityManagerFactory) {
-        this.jobBuilderFactory = jobBuilderFactory;
-        this.stepBuilderFactory = stepBuilderFactory;
-        this.entityManagerFactory = entityManagerFactory;
-    }
 
     @Bean
     public Job expirePassesJob(){
