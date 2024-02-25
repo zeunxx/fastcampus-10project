@@ -38,7 +38,7 @@ dependencies {
 	implementation("org.mapstruct:mapstruct:1.5.3.Final")
 	implementation("org.projectlombok:lombok-mapstruct-binding:0.2.0")
 	implementation 'org.springframework.batch:spring-batch-integration'
-
+	implementation 'com.opencsv:opencsv:5.7.0'
 }
 
 tasks.named('test') {
